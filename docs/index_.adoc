@@ -1,12 +1,14 @@
-:REPOS_URL: https://github.com/kazurayam/Vite-CSS-Module-hashes-HTML-ID-as-well
+:PROJECT_NAME: minista-pluginEntry-breaks-the-css-output-by-pluginBundle
+
+:REPOS_URL: https://github.com/kazurayam/{PROJECT_NAME}
 
 :BLOB_URL: {REPOS_URL}/blob/article
 
-:PAGES_URL: https://kazurayam.github.io/Vite-CSS-Module-hashes-HTML-ID-as-well
+:PAGES_URL: https://kazurayam.github.io/{PROJECT_NAME}
 
 :projectVersion: 0.0.0
 
-= viteがHTML要素のID属性をハッシュしたCSSセレクタを生成するので困った話
+= In minista, pluginEntry breaks the css, which was output by pluginBundle
 
 include::./introduction.adoc[]
 
@@ -16,6 +18,6 @@ include::./step02_style-was-broken.adoc[]
 
 include::./step03_traspiled-html.adoc[]
 
-include::./step04_resolution-stage1.adoc[]
+include::./step04_analysis-with-or-without-pluginEntry.adoc[]
 
 include::./conclusion.adoc[]

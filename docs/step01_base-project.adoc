@@ -1,6 +1,7 @@
-== step01: 元となる静的HTMLサイト
+== step01: the base project
 
-link:{REPOS_URL}[デモのレポジトリ] をローカルにcloneして、VSCodeの link:https://zenn.dev/harasho/articles/vscode-live-server[Live Server] extensionを使って `base-project/index.html` を開くと、以下のような静的HTMLサイトが表示されます。
+You can clone the link:{REPOS_URL}[repository] into your local machine, and you can open `base-project/index.html` using VSCode link:https://zenn.dev/harasho/articles/vscode-live-server[Live Server]. Then you will find a static web page, like this:
+
 
 * http://127.0.0.1:5500/base-project/index.html
 
@@ -10,7 +11,7 @@ image:{PAGES_URL}/images/011_base-project-top.png[base-project/index.html]
 
 image:{PAGES_URL}/images/012_base-project-about.png[base-project/about/index.html]
 
-このwebサイトは本記事のために作ったサンプルです。わたしが仕事で関わっているサイトを踏まえていますがまったく別物です。平凡なHTMLとCSSと画像から構成されています。
+This web site is a sample for this article. This is not what I work with as my business. The web site comprises with a set of simple HTML and CSS files.
 
 [source.shell]
 ----
@@ -29,7 +30,7 @@ base-project
     └── layout.css
 ----
 
-ソースコードの一部を引用しておきます。
+I will quote the sources just for your reference.
 
 === index.html
 
@@ -58,12 +59,6 @@ include::../base-project/style/layout.css[]
 ----
 include::../base-project/style/index.css[]
 ----
-
-ここに登場したCSSセレクタに注目してください。
-
-`#main .mainVisual`
-
-これがstep02及びそれ以降で問題となります。
 
 === images/seagull.jpg
 

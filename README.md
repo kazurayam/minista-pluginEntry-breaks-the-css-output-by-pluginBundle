@@ -1,7 +1,5 @@
-# Vite CSS Module hashes HTML ID as well
+# minista pluginEntry breask the css output by pluginBundle
 
-古き良きHTMLサイトをTypeScript言語でJSXを活用して書き直したいと思った。LayoutとページテンプレートをTypeScript言語でJSX構文で書いて、[minista](https://minista.qranoko.jp/) ver4を使って静的サイトを生成した。やってみたら画面のスタイルが崩れた。CSS Moduleの周りに地雷があった。
+I created a project using [minista](https://github.com/qrac/minista), v4.0.11 the latest version where I used the `pluginEntry` together with `pluginBundle`. To me, the `pluginEntry` looked problematic. I would report what I found in the following artcile:
 
-古き良きHTMLサイトをminista(=vite)で書き直したいと考える人がもしいたら、わたしと同じように四苦八苦するだろう。彼らのためにわたしの経験を記録して公開しよう。
-
-- [docs](https://kazurayam.github.io/Vite-CSS-Module-hashes-HTML-ID-as-well/)
+- [docs](https://kazurayam.github.io/minista-pluginEntry-breaks-the-css-output-by-pluginBundle)
