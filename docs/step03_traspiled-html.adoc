@@ -1,0 +1,41 @@
+== step03: viteが .tsx と .css をトランスパイルしてどんなHTMLを生成したのか
+
+ブラウザで `http://localhost:5173` を開いたときにブラウザに表示されたwebページをファイルに保存した。それが下記のテキストです。
+
+[source,html]
+----
+include::./step03_broken.html[]
+----
+
+背景画像が表示されなくなった原因は何か？
+
+109行目あたりに次のようなCSSルールがインラインで埋め込まれています。
+
+[source,html]
+----
+include::./step03_broken.html[lines=109..118]
+----
+
+このCSSセレクタ `#_main_1rt9u_3 ._mainVisual_1rt9u_3` は間違っています。このCSSセレクタに対応するHTML要素が138行目あたりにあります。
+
+[source,html]
+----
+    <main id="main">
+        <div class="_mainVisual_1rt9u_3">
+----
+
+このHTMLに整合するCSSセレクタは `#main ._mainVisual_1rt9u_3` です。このHTML要素は `my-minista-project/src/pages/index.tsx` の 7行目に書かれていたコードに基づいてviteが生成したものです。
+
+[source,html]
+----
+export default function () {
+  return (
+    <main id="main">
+      <div className={styles.mainVisual}>
+----
+
+viteが `bun run dev` コマンドを契機として `my-minista-project/src/assets/modules/index.css` をトランスパイルして生成したCSSセレクタの中で、HTML要素のID属性がハッシュされてしまったために、CSSセレクタとHTML要素の整合性が崩れてしまったのです。
+
+この問題をどう解決するか?
+
+GitHubレポジトリの link:https://github.com/kazurayam/how-to-setup-vite-not-to-hash-ID-in-CSS-selector/releases/tag/starting-point[starting-point] をcheckoutすればここまでの説明を再現できます。

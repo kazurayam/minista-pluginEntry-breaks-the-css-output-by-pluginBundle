@@ -1,0 +1,71 @@
+== step01: 元となる静的HTMLサイト
+
+link:{REPOS_URL}[デモのレポジトリ] をローカルにcloneして、VSCodeの link:https://zenn.dev/harasho/articles/vscode-live-server[Live Server] extensionを使って `base-project/index.html` を開くと、以下のような静的HTMLサイトが表示されます。
+
+* http://127.0.0.1:5500/base-project/index.html
+
+image:{PAGES_URL}/images/011_base-project-top.png[base-project/index.html]
+
+* http://127.0.0.1:5500/base-project/about/index.html
+
+image:{PAGES_URL}/images/012_base-project-about.png[base-project/about/index.html]
+
+このwebサイトは本記事のために作ったサンプルです。わたしが仕事で関わっているサイトを踏まえていますがまったく別物です。平凡なHTMLとCSSと画像から構成されています。
+
+[source.shell]
+----
+$ tree base-project
+base-project
+├── about
+│   └── index.html
+├── images
+│   ├── 4467417.jpeg
+│   └── seagull.jpg
+├── index.html
+└── style
+    ├── about.css
+    ├── general.css
+    ├── index.css
+    └── layout.css
+----
+
+ソースコードの一部を引用しておきます。
+
+=== index.html
+
+[source,html]
+----
+include::../base-project/index.html[]
+----
+
+=== style/general.css
+
+[source,css]
+----
+include::../base-project/style/general.css[]
+----
+
+=== style/layout.css
+
+[source,css]
+----
+include::../base-project/style/layout.css[]
+----
+
+=== style/index.css
+
+[source,css]
+----
+include::../base-project/style/index.css[]
+----
+
+ここに登場したCSSセレクタに注目してください。
+
+`#main .mainVisual`
+
+これがstep02及びそれ以降で問題となります。
+
+=== images/seagull.jpg
+
+image:{PAGES_URL}/images/seagull.jpg[seagull]
+
