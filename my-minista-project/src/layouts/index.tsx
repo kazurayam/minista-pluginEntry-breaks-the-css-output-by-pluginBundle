@@ -20,6 +20,7 @@ export default function (props: LayoutProps) {
       <MyNav />
       {props.children}
       <MyFooter />
+      <script type="module" src="/src/assets/js/windowResize.js"></script>
     </>
   )
 }

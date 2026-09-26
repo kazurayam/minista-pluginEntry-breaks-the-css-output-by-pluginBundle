@@ -223,9 +223,9 @@ I will quote the sources just for your reference.
 
 ![seagull](https://kazurayam.github.io/minista-pluginEntry-breaks-the-css-output-by-pluginBundle/images/seagull.jpg)
 
-## step02: ページのスタイルが壊れた
+## step02: New project got a broken style
 
-[minista](https://minista.qranoko.jp/)を使って新しいプロジェクト `my-minista-project` を作りました。`base-project` のHTMLファイル `index.html` をTypeScript言語でJSX構文を使って書き直した。`base-project` のCSSファイル群を `my-minista-project` にコピーしました。
+I made a new project `my-minista-project` using [minista](https://minista.qranoko.jp/). I traslated the HTML file `index.html` of the `base-project` into TypeScript language with JSX syntax. I copied the css files and images out of the `base-project` into the `src/assets` directory of the new `my-minista-project`
 
     $ tree my-minista-project -I node_modules -I dist
     my-minista-project
@@ -260,17 +260,17 @@ I will quote the sources just for your reference.
 
     11 directories, 18 files
 
-下記の操作をしてviteの開発サーバを立ち上げました。
+I could bring the development server, as follows:
 
     $ cd my-minista-project
     $ bun install
     $ bun run dev
 
-ブラウザで `http://localhost:5173` をブラウザで開くと、以下のような画面が表示されました。
+In FireFox browser, I navited to `http://localhost:5173`, I saw the following page:
 
 ![021 style was broken](https://kazurayam.github.io/minista-pluginEntry-breaks-the-css-output-by-pluginBundle/images/021_style-was-broken.png)
 
-あれ？ `base-project` とは見た目が違っている。背景画像が無くなっている。余白の大きさが違っています。どうしてこうなったのか？
+What? This looks different from the `base-project`. No background image there. The margins differ. Why the style is broken?
 
 ## step03: viteが .tsx と .css をトランスパイルしてどんなHTMLを生成したのか
 
